@@ -1,0 +1,1 @@
+  'Does not work with BB Curve 8330 with OS 4.3 or above.The update procedure is difficult and cumbersome.'

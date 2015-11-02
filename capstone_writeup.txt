@@ -1,0 +1,21 @@
+  My Capstone Project involved sentiment analysis of reviews from three different websites (Amazon, IMDB, and Yelp), in a supervised learning setting. For
+context, each site had 1000 reviews, with 500 "positive" reviews and 500 "negative" reviews for a total of 3000 reviews. The respective machine learning algorithms
+are in the amazon, imdb, and yelp iPython notebook files.
+  The initial step of the problem was to create three seperate corpora for the three sites, each with "positive" and "negative"
+subdirectories to contain the reviews according to their sentiment. Then a training/testing split of 80 percent to 20 percent was made. To keep the machine learning
+as domain-specific as possible, three separate machine learning problems will be treated.
+  For each problem, a pipleline approach was used where the documents are run through a count vectorizer, and then a term frequency-inverse docuent frequency transformer
+for feature selection, before being passed into a particular machine learning algorithm.
+  First the IMDB website was approached. Out of the box, to get a baseline a counter vectorizer to multinomial naive Bayes pipleline was used. This produced a very high 
+accuracy of .806. a pipeline using a default support vector classifier acheived a good accuracy of 0.781. Repeating this pipeline with the support vector classifier having 
+a penalty parameter of 0.5 (as opposed to the default value of 1.0) increased the accuracy to 0.811. So for the IMDB domain, very good accuracy can be acheieved with 
+a basic naive Bayes classifier 
+  Second, the Amazon website was approached.  A multinomial naive Bayes classifer baseline yielded an accuracy of 0.685, and a default support vector classifer 
+(with an rbf kernel) yielded an accuracy of 0.64. A significant accuracy improvement to 0.75 resulted from using an SVC with a linear kernel and penalty parameter 
+of C=0.5. To see if other classifiers perform better, a random forest classifier and a stochastic gradient descent classifer were chosen. The random forest classifer
+yielded an accuracy of 0.665, and a stochastic gradient classifier with a log loss function and L2 penalty term yielded an accuracy of 0.7655 which I consider to be very
+acceptable accuracy.
+  Lastly, the Yelp website was approached. A count vectorizer with multinomial naive Bayes classifier pipeline as a baseline yieled a relatively poor accuracy of 
+0.525, while placing a tf-idf transformer between them increased the accuracy to 0.610. For the Yelp website, the best accuracy reached with what I determined to be an acceptable 
+an acceptable level, was with a random forest classifier pipeline for an accuracy of 0.700.
+  
